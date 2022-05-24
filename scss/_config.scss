@@ -2,6 +2,7 @@ $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url("../img/background2.jpg");
+$profile-image: url("../img/profile2.jpg");
 $background-opacity: 0.8;
 // mixin is used to create css transition that you can reuse, like a function
 @mixin easeOut {
@@ -12,7 +13,7 @@ $background-opacity: 0.8;
 @mixin background {
   @if $show-home-image {
     &#bg-img {
-      background-image: $home-image;
+      background: $home-image;
       background-attachment: fixed;
       background-size: cover;
 

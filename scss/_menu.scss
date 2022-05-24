@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.91;
   visibility: hidden;
 
   &.show {
@@ -65,7 +65,7 @@
   &-nav {
     margin: 0;
     padding: 0;
-    background: darken($color: $primary-color, $amount: 5);
+    background: darken($color: $primary-color, $amount: 5%);
     list-style: none;
     @include easeOut;
     transform: translate3d(0, -100%, 0);
@@ -86,10 +86,49 @@
       transform: translate3d(0, 0, 0);
     }
     .portrait {
+      background: $profile-image;
       width: 250px;
       height: 250px;
-      background-image: url("../img/sean_profile.jpg");
+      opacity: 1;
       border-radius: 50%;
+      border: 3px solid $secondary-color;
     }
+  }
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    //when show class is applied, slide nav from right
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+//delay each nav item slide by 0.1s
+//SASS code for a for loop similar to
+// for(let x = 1, x < 4, x++)
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
