@@ -3,6 +3,7 @@ $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url("../img/background2.jpg");
 $profile-image: url("../img/profile2.jpg");
+$profile-image-small: url("../img/profile_small.jpg");
 $background-opacity: 0.8;
 // mixin is used to create css transition that you can reuse, like a function
 @mixin easeOut {
@@ -28,5 +29,27 @@ $background-opacity: 0.8;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+//media query mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
