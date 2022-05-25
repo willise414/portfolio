@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.91;
+  opacity: 0.95;
   visibility: hidden;
 
   &.show {
@@ -68,6 +68,7 @@
     background: darken($color: $primary-color, $amount: 5%);
     list-style: none;
     @include easeOut;
+
     transform: translate3d(0, -100%, 0);
 
     //when show class is applied, slide nav in from top
@@ -85,6 +86,7 @@
     &.show {
       transform: translate3d(0, 0, 0);
     }
+
     .portrait {
       background: $profile-image;
       width: 250px;

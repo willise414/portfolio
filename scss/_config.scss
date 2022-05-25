@@ -9,7 +9,9 @@ $background-opacity: 0.8;
 @mixin easeOut {
   transition: all 0.5s ease-out;
 }
-
+@mixin changePage {
+  transition: all 1s change-page;
+}
 //create mixin for background image
 @mixin background {
   @if $show-home-image {
@@ -29,6 +31,15 @@ $background-opacity: 0.8;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+//set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
