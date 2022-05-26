@@ -74,6 +74,9 @@ main {
   &#about {
     overflow: hidden;
   }
+  &#about a {
+    color: $secondary-color;
+  }
 }
 
 .about-info {
